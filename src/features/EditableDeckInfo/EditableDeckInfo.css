@@ -1,0 +1,11 @@
+.editable-deck-info__error {
+    color: var(--color-red);
+}
+
+.editable-deck-info {
+    max-width: 600px;
+
+    & > *:not(:last-child) {
+        margin-bottom: 16px;
+    }
+}

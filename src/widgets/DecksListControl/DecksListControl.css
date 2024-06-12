@@ -1,0 +1,15 @@
+.decks-list-control {
+  padding: 16px;
+}
+
+.decks-list-control__create {
+  margin-bottom: 16px;
+}
+
+.decks-list-control__loading {
+  margin: 16px;
+}
+
+.decks-list-control__title {
+  margin-bottom: 8px;
+}

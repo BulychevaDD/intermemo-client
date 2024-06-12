@@ -1,0 +1,31 @@
+.create-card__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    & > *:not(:last-child) {
+        margin-bottom: 20px;
+    }
+}
+
+.create-card__controls {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.create-card__error {
+    color: var(--color-red);
+}
+
+.create-card__modal {
+    padding: 16px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.create-card__title {
+    margin-bottom: 24px;
+}

@@ -1,0 +1,37 @@
+.edit-card-modal__error {
+  color: var(--color-red);
+}
+
+.edit-card-modal__form {
+  max-width: 600px;
+
+  & > *:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
+
+.edit-card-modal__delete {
+  border-color: var(--color-red);
+  color: var(--color-red);
+}
+
+.edit-card-modal {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-card-modal__controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+
+  & > *:not(:last-child) {
+    margin-right: 16px;
+  }
+}
+
+.edit-card-modal__next-study {
+  margin-top: 24px;
+  color: var(--color-6);
+}

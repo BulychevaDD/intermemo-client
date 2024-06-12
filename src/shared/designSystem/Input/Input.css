@@ -1,0 +1,59 @@
+.input {
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
+
+  & > label {
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+  }
+
+  & > input {
+    border-bottom-style: solid;
+    border-bottom-color: var(--color-6);
+
+    &:focus-visible:not(:disabled) {
+      border-bottom-color: var(--color-5);
+    }
+  }
+}
+
+.input--disabled {
+  opacity: 0.5;
+}
+
+.input--l {
+  & > label,
+  input {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  & > input {
+    border-width: 2px;
+  }
+}
+
+.input--m {
+  & > label,
+  input {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  & > input {
+    border-width: 2px;
+  }
+}
+
+.input--s {
+  & > label,
+  input {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  & > input {
+    border-width: 1px;
+  }
+}

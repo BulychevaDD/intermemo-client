@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  background: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+input {
+  padding: 0;
+  border: none;
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: transparent;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

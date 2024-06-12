@@ -1,0 +1,286 @@
+openapi: '3.1.0'
+info:
+  title: Cards REST API
+  version: 0.1.0
+servers:
+  - url: /api/private
+paths:
+  /decks:
+    get:
+      description: Returns all decks available for current user
+      operationId: getDecks
+      responses:
+        '200':
+          description: Array of decks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Deck'
+    post:
+      description: Creates deck with provided unique name
+      operationId: createDeck
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeckConfigurableParameters'
+      responses:
+        '201':
+          description: Created deck
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Deck'
+  /decks/{deck_id}/study:
+    parameters:
+      - name: deck_id
+        in: path
+        required: true
+        schema:
+          type: integer
+    get:
+      description: Return all study cards
+      operationId: getStudy
+      responses:
+        '200':
+          description: Study Cards
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Card'
+  /decks/{deck_id}:
+    parameters:
+      - name: deck_id
+        in: path
+        required: true
+        schema:
+          type: integer
+    get:
+      description: Return deck by id
+      operationId: getDeck
+      responses:
+        '200':
+          description: Deck with given ID
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Deck'
+    put:
+      description: Update deck by id with parameters
+      operationId: updateDeck
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeckConfigurableParameters'
+      responses:
+        '200':
+          description: Updated deck
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Deck'
+    delete:
+      description: Delete deck by id
+      operationId: deleteDeck
+      responses:
+        '204':
+          description: Deck deleted
+  /decks/{deck_id}/cards:
+    parameters:
+      - name: deck_id
+        in: path
+        required: true
+        schema:
+          type: integer
+    get:
+      description: Get all cards in deck
+      operationId: getCards
+      responses:
+        '200':
+          description: All cards in deck
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Card'
+    post:
+      description: Create new card in deck
+      operationId: createCard
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CardCreateParameters'
+      responses:
+        '200':
+          description: Created card
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Card'
+  /decks/{deck_id}/cards/{card_id}:
+    parameters:
+      - name: deck_id
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: card_id
+        in: path
+        required: true
+        schema:
+          type: integer
+    delete:
+      description: Delete card by id
+      operationId: deleteCard
+      responses:
+        '204':
+          description: Card deleted
+    put:
+      description: Update card by id with parameters
+      operationId: updateCard
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CardConfigurableParameters'
+      responses:
+        '200':
+          description: Updated card
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Card'
+  /decks/{deck_id}/cards/{card_id}/study:
+    parameters:
+      - name: deck_id
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: card_id
+        in: path
+        required: true
+        schema:
+          type: integer
+    post:
+      description: Study card
+      operationId: studyCard
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Study'
+      responses:
+        '200':
+          description: Card studied
+components:
+  schemas:
+    Study:
+      type: object
+      properties:
+        difficulty:
+          type: integer
+      required:
+        - difficulty
+    Statistics:
+      type: object
+      properties:
+        cards_amount:
+          type: integer
+        cards_average_difficulty:
+          type: integer
+        cards_today:
+          type: integer
+        cards_tomorrow:
+          type: integer
+      required:
+        - cards_amount
+        - cards_average_difficulty
+        - cards_today
+        - cards_tomorrow
+    Deck:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        description:
+          type: string
+        created_at:
+          type: string
+        updated_at:
+          type: string
+        last_study:
+          type: string
+        statistics:
+          $ref: '#/components/schemas/Statistics'
+      required:
+        - id
+        - name
+        - created_at
+        - updated_at
+    CardCreateParameters:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/CardConfigurableParameters'
+        - type: object
+          properties:
+            difficulty:
+              type: integer
+          required:
+            - difficulty
+    DeckConfigurableParameters:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+      required:
+        - name
+    Card:
+      type: object
+      properties:
+        id:
+          type: integer
+        question:
+          type: string
+        answer:
+          type: string
+        created_at:
+          type: string
+        updated_at:
+          type: string
+        deck_id:
+          type: number
+        difficulty:
+          type: number
+        next_study:
+          type: string
+      required:
+        - id
+        - question
+        - answer
+        - deck_id
+        - created_at
+        - updated_at
+        - difficulty
+        - next_study
+    CardConfigurableParameters:
+      type: object
+      properties:
+        question:
+          type: string
+        answer:
+          type: string
+      required:
+        - question
+        - answer

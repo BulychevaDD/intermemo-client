@@ -1,0 +1,33 @@
+.layout {
+  min-height: 100vh;
+}
+
+.layout__main {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.layout__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--color-5);
+  background: var(--color-1);
+}
+
+.layout__title {
+  color: var(--color-7);
+}
+
+.layout__menu-item {
+  color: var(--color-6);
+}
+
+.layout__menu {
+  display: flex;
+  align-items: center;
+
+  & > *:not(:last-child) {
+    margin-right: 24px;
+  }
+}

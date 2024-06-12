@@ -1,0 +1,28 @@
+.deck-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.deck-item__help-name {
+  color: var(--color-6);
+  margin-right: 8px;
+}
+
+.deck-item__name {
+  margin-bottom: 8px;
+}
+
+.deck-item__description {
+  margin-bottom: 6px;
+}
+
+.deck-item__created {
+  color: var(--color-black-64);
+}
+
+.deck-item__last-study {
+  margin-top: 10px;
+  color: var(--color-6);
+}

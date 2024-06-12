@@ -1,0 +1,42 @@
+.deck-control__loading {
+  margin: 16px;
+}
+
+.deck-control {
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.deck-control__editable-info {
+  margin: 16px 0;
+}
+
+.deck-control__delete {
+  align-self: flex-end;
+  border-color: var(--color-red);
+  color: var(--color-red);
+}
+
+.deck-control__study {
+  align-self: center;
+  width: 200px;
+  height: 100px;
+  background-color: var(--color-8) !important;
+  border-color: var(--color-8) !important;
+  margin-left: 40px;
+}
+
+.deck-control__block {
+  display: flex;
+}
+
+.deck-control__statistics-title {
+  margin-bottom: 16px;
+  border-left: 3px solid var(--color-3);
+  padding-left: 8px;
+}
+
+.deck-control__statistics-item {
+  margin-bottom: 8px;
+}

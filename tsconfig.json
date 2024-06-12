@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "rootDir": "./",
+    "baseUrl": "./src",
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "allowSyntheticDefaultImports": true,
+    "target": "ES6",
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "alwaysStrict": true,
+    "module": "ESNext",
+    "moduleResolution": "Node"
+  },
+  "include": ["jest-setup.ts", "./src"]
+}

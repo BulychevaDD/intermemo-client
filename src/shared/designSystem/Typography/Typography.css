@@ -1,0 +1,41 @@
+.typography {
+  font-family: Roboto, sans-serif;
+  color: var(--color-black);
+}
+
+.typography--1 {
+  font-size: 56px;
+  line-height: 64px;
+}
+
+.typography--2 {
+  font-size: 38px;
+  line-height: 46px;
+}
+
+.typography--3 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.typography--4 {
+  font-size: px;
+  line-height: 24px;
+}
+
+.typography--5 {
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.typography--light {
+  font-weight: 300;
+}
+
+.typography--regular {
+  font-weight: 400;
+}
+
+.typography--bold {
+  font-weight: 700;
+}

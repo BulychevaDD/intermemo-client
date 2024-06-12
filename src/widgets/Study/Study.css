@@ -1,0 +1,59 @@
+.study__loading {
+  margin: 16px;
+}
+
+.study {
+  margin: 16px;
+}
+
+.study__done {
+  margin: 16px;
+}
+
+.study__card {
+  margin-bottom: 16px;
+}
+
+.study__controls {
+  display: flex;
+
+  & > * {
+    width: 20%;
+  }
+
+  & > *:not(:last-child) {
+    margin-right: 16px;
+  }
+}
+
+.study__done-back {
+  margin-top: 12px;
+}
+
+.study__perfect,
+.study__perfect:hover {
+  background-color: var(--color-green) !important;
+  border-color: var(--color-green) !important;
+  color: var(--color-black) !important;
+}
+
+.study__remembered,
+.study__remembered:hover {
+  background-color: var(--color-yellow) !important;
+  border-color: var(--color-yellow) !important;
+  color: var(--color-black) !important;
+}
+
+.study__close,
+.study__close:hover {
+  background-color: var(--color-red) !important;
+  border-color: var(--color-red) !important;
+  color: var(--color-black) !important;
+}
+
+.study__blackout,
+.study__blackout:hover {
+  background-color: var(--color-black-64) !important;
+  border-color: var(--color-black-64) !important;
+  color: var(--color-white) !important;
+}

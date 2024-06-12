@@ -1,0 +1,22 @@
+.card-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-item__question {
+  margin-bottom: 8px;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.card-item__created {
+  color: var(--color-black-64);
+}
+
+.card-item__difficulty {
+  color: var(--color-6);
+}

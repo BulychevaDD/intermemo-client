@@ -1,0 +1,27 @@
+{
+  "extends": ["airbnb", "airbnb-typescript", "airbnb/hooks", "plugin:storybook/recommended"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "generator-star-spacing": "off",
+    "react/react-in-jsx-scope": "off",
+    "linebreak-style": "off",
+    "import/prefer-default-export": "off",
+    "implicit-arrow-linebreak": "off",
+    "function-paren-newline": "off",
+    "object-curly-newline": "off",
+    "react/function-component-definition": "off",
+    "@typescript-eslint/indent": "off",
+    "react/require-default-props": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": ["**/*.test.ts", "**/*.test.tsx", "**/*.stories.ts", "**/*.stories.tsx"]
+      }
+    ]
+  },
+  "ignorePatterns": ["*.js"]
+}

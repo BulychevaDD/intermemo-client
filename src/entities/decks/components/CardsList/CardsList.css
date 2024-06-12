@@ -1,0 +1,14 @@
+.cards-list__item {
+  margin-bottom: 12px;
+  margin-right: 24px;
+  width: 30%;
+  display: inline-flex;
+}
+
+.cards-list__show {
+  margin-bottom: 12px;
+  width: 100%;
+  text-align: center;
+  color: var(--color-6);
+  cursor: pointer;
+}
